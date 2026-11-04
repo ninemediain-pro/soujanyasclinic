@@ -1,0 +1,103 @@
+import React from 'react';
+import { clinicData } from '../data/clinic';
+
+export const MobileBottomBar = ({ onSelectAppointment }) => {
+  const phoneHref = `tel:${clinicData.contact?.phoneTel || clinicData.contact?.phone || '+916303818118'}`;
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleAppointmentClick = (e) => {
+    e.preventDefault();
+    if (onSelectAppointment) {
+      onSelectAppointment();
+    } else {
+      scrollToSection('appointment');
+    }
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    scrollToSection('home');
+  };
+
+  return (
+    <nav
+      aria-label="Mobile Bottom Navigation"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/80 shadow-[0_-8px_30px_rgba(0,0,0,0.06)] rounded-t-3xl transition-transform duration-300"
+    >
+      <div className="max-w-md mx-auto px-6 pt-2 pb-[calc(env(safe-area-inset-bottom,0px)+10px)] flex items-center justify-between">
+        
+        {/* 1. Appointment Button (Toy Doctor Icon) */}
+        <button
+          type="button"
+          onClick={handleAppointmentClick}
+          className="flex-1 flex flex-col items-center justify-center gap-1 py-1 text-slate-700 hover:text-slate-950 active:scale-90 transition-all cursor-pointer group"
+          aria-label="Book an appointment"
+        >
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200/80 p-0.5 flex items-center justify-center shadow-sm border border-slate-200 group-hover:scale-105 group-hover:shadow-md transition-all overflow-hidden">
+            <img
+              src="/doctor-toy.jpg"
+              alt="Doctor Appointment"
+              className="w-full h-full object-cover rounded-[14px]"
+            />
+          </div>
+          <span className="text-[11px] font-bold tracking-tight text-slate-700 group-hover:text-[#0145f2]">
+            Appointment
+          </span>
+        </button>
+
+        {/* 2. Elevated Center Logo (Matches screenshot's elevated circular bubble) */}
+        <div className="relative -top-5 flex flex-col items-center">
+          <button
+            type="button"
+            onClick={handleLogoClick}
+            className="w-15 h-15 rounded-full bg-white p-1.5 shadow-[0_6px_20px_rgba(1,69,242,0.18)] border-2 border-[#0145f2] flex items-center justify-center active:scale-95 transition-all cursor-pointer group"
+            aria-label="Clinic home"
+            title="Dr. Soujanya's Mother and Mind Care"
+          >
+            {clinicData.logoUrl ? (
+              <img
+                src={clinicData.logoUrl}
+                alt={clinicData.clinicName}
+                className="w-full h-full object-contain rounded-full group-hover:scale-105 transition-transform"
+              />
+            ) : (
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-[#0145f2] to-[#0031b8] flex items-center justify-center text-white font-bold text-xs">
+                MMC
+              </div>
+            )}
+          </button>
+          <span className="text-[10px] font-bold text-[#0145f2] mt-0.5 tracking-tight">
+            Home
+          </span>
+        </div>
+
+        {/* 3. Contact Button (Toy Medical Support Phone Icon - Directly calls on mobile) */}
+        <a
+          href={phoneHref}
+          className="flex-1 flex flex-col items-center justify-center gap-1 py-1 text-slate-700 hover:text-[#0145f2] active:scale-90 transition-all cursor-pointer group"
+          aria-label="Call clinic directly"
+        >
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200/80 p-0.5 flex items-center justify-center shadow-sm border border-slate-200 group-hover:scale-105 group-hover:shadow-md transition-all overflow-hidden">
+            <img
+              src="/contact-toy.jpg"
+              alt="Contact Support"
+              className="w-full h-full object-cover rounded-[14px]"
+            />
+          </div>
+          <span className="text-[11px] font-bold tracking-tight text-slate-700 group-hover:text-slate-950">
+            Contact
+          </span>
+        </a>
+
+      </div>
+    </nav>
+  );
+};
+
+export default MobileBottomBar;

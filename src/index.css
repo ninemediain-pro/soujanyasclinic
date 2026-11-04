@@ -1,0 +1,354 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --color-canvas-cloud: #edf1f5;
+    --color-electric-blue: #0145f2;
+    --color-electric-blue-hover: #0038cb;
+    --color-primary: #0145f2;
+    --color-primary-dark: #0031b8;
+    --color-primary-light: #2d6eff;
+    --color-accent: #0145f2;
+    --color-accent-light: #6090ff;
+    --color-accent-dark: #002aa1;
+    --color-bg-light: #edf1f5;
+    --color-bg-subtle: #e2e8f0;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --color-canvas-cloud: #0d1527;
+    --color-electric-blue: #2d6eff;
+    --color-electric-blue-hover: #0145f2;
+    --color-primary: #2d6eff;
+    --color-primary-dark: #0145f2;
+    --color-primary-light: #6090ff;
+    --color-accent: #6090ff;
+    --color-accent-light: #93b5ff;
+    --color-accent-dark: #0145f2;
+    --color-bg-light: #090d16;
+    --color-bg-subtle: #0f172a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #edf1f5;
+    color: #0f172a;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark {
+    background-color: #090d16;
+    color: #f8fafc;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Custom focus states for WCAG accessibility */
+  *:focus-visible {
+    outline: 2px solid #0145f2;
+    outline-offset: 2px;
+  }
+
+  .dark *:focus-visible {
+    outline: 2px solid #2d6eff;
+    outline-offset: 2px;
+  }
+
+  /* Tap target friendly */
+  button, a {
+    touch-action: manipulation;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Rich Canvas Cloud background with ambient luminous gradients */
+.clinic-gradient-bg {
+  background-color: #edf1f5;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.9) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(1, 69, 242, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 90% 60% at 50% 0%, #ffffff 0%, rgba(237, 241, 245, 0.8) 40%, transparent 75%);
+}
+
+.dark .clinic-gradient-bg {
+  background-color: #0b1120;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(15, 23, 42, 0.85) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(1, 69, 242, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 90% 60% at 50% 0%, #0f172a 0%, rgba(11, 17, 32, 0.8) 40%, transparent 75%);
+}
+
+.clinic-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+.dark .clinic-glass {
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+}
+
+/* Expansive, responsive page container utilizing wide screens with balanced padding */
+.clinic-container {
+  width: 100%;
+  max-width: 1760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .clinic-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .clinic-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .clinic-container {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+.clinic-hero-shape {
+  border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%;
+  animation: morphShape 12s ease-in-out infinite alternate;
+}
+
+@keyframes morphShape {
+  0% {
+    border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%;
+  }
+  50% {
+    border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%;
+  }
+  100% {
+    border-radius: 50% 50% 60% 40% / 40% 60% 50% 50%;
+  }
+}
+
+/* Smooth Modal & Sheet Keyframes */
+@keyframes modalBackdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalPopCenter {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-backdrop-in {
+  animation: modalBackdropFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-modal-center {
+  animation: modalPopCenter 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Infinite Marquee Animation for Clinical Care section */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover,
+.group-marquee:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* Vertical Infinite Marquee (Bottom to Top) */
+@keyframes marqueeVertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee-vertical {
+  display: flex;
+  flex-direction: column;
+  animation: marqueeVertical 4.5s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-vertical:hover,
+.group-vertical-marquee:hover .animate-marquee-vertical,
+.group\/vertical-marquee:hover .animate-marquee-vertical {
+  animation-play-state: paused;
+}
+
+.animate-marquee-vertical-directory {
+  display: flex;
+  flex-direction: column;
+  animation: marqueeVertical 16s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-vertical-directory:hover,
+.group-vertical-marquee:hover .animate-marquee-vertical-directory,
+.group\/directory-scroll:hover .animate-marquee-vertical-directory {
+  animation-play-state: paused;
+}
+
+/* Horizontal Infinite Marquee for Services Shelf */
+@keyframes marqueeServices {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-services {
+  display: flex;
+  width: max-content;
+  animation: marqueeServices 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-services:hover,
+.group\/marquee-rail:hover .animate-marquee-services,
+.group-services-marquee:hover .animate-marquee-services {
+  animation-play-state: paused;
+}
+
+/* Mini Infinite Marquee for Hero Live Announcement Badge */
+@keyframes miniMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-mini-marquee {
+  display: flex;
+  width: max-content;
+  animation: miniMarquee 26s linear infinite;
+  will-change: transform;
+}
+
+.animate-mini-marquee:hover,
+.group\/ticker:hover .animate-mini-marquee {
+  animation-play-state: paused;
+}
+
+/* Flipkart-style moving line indicator */
+@keyframes flipkartLineGlide {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(180%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-flipkart-line {
+  animation: flipkartLineGlide 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.group-marquee:hover .animate-flipkart-line {
+  animation-play-state: paused;
+}
+
+/* Flipkart Carousel Progress Timer Bar */
+@keyframes flipkartProgressBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-flipkart-progress {
+  animation: flipkartProgressBar 4.5s linear forwards;
+}
+
+/* Gradient fade mask for smooth edge transitions */
+.mask-gradient-x {
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+/* Hide scrollbars for smooth interactive horizontal scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
