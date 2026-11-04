@@ -243,10 +243,10 @@ export const Hero = () => {
             <div className="mb-4 sm:mb-6">
               <img 
                 src="/clinic-hero-brand.png" 
-                alt="Dr. Soujanya's Mother & Mind Clinic" 
+                alt="Dr. Soujanya's Mother & Mind Care" 
                 className="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[520px] h-auto object-contain object-left drop-shadow-xs"
               />
-              <h1 className="sr-only">Dr. Soujanya's Mother & Mind Clinic</h1>
+              <h1 className="sr-only">Dr. Soujanya's Mother & Mind Care</h1>
             </div>
 
             {/* Subheadline */}
