@@ -239,25 +239,15 @@ export const Hero = () => {
              ----------------------------------------------------------------------- */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col items-start text-left">
             
-            {/* Official Clinic Logo Emblem (Logo Only) */}
-            <div className="mb-4 sm:mb-5">
+            {/* Official Clinic Brand Logo Banner (Replacing emblem & headline as requested) */}
+            <div className="mb-4 sm:mb-6">
               <img 
-                src="/clinic-logo-dark.png" 
-                alt="Clinic Emblem Logo" 
-                className="h-14 sm:h-16 md:h-20 w-auto object-contain object-left drop-shadow-xs"
+                src="/clinic-hero-brand.png" 
+                alt="Dr. Soujanya's Mother & Mind Clinic" 
+                className="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[520px] h-auto object-contain object-left drop-shadow-xs"
               />
+              <h1 className="sr-only">Dr. Soujanya's Mother & Mind Clinic</h1>
             </div>
-
-            {/* Editorial Headline */}
-            <h1 className="text-2xl sm:text-4xl md:text-[42px] lg:text-[44px] xl:text-[46px] font-black text-slate-950 tracking-tight leading-snug sm:leading-[1.14] mb-3 sm:mb-4">
-              Advanced Women’s Health &{' '}
-              <span className="relative whitespace-nowrap">
-                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-slate-950 via-[#0145f2] to-[#0145f2]">
-                  Compassionate Mind Care.
-                </span>
-                <span className="absolute bottom-1 left-0 w-full h-2 sm:h-3 bg-[#0145f2]/15 -z-10 rounded-sm"></span>
-              </span>
-            </h1>
 
             {/* Subheadline */}
             <p className="text-xs sm:text-base text-slate-600 mb-4 sm:mb-6 max-w-2xl leading-relaxed">
