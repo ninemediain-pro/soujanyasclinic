@@ -392,10 +392,10 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                   onChange={handleChange}
                   className="w-full px-2.5 py-2 rounded-lg border border-slate-200 text-xs bg-white focus:border-slate-900 focus:outline-hidden"
                 >
-                  <option value="">Any Available Specialist</option>
+                  <option value="">Any Available Doctor / General Consultation</option>
                   {doctors?.map((doc) => (
                     <option key={doc.id} value={doc.name}>
-                      {doc.name} ({doc.specialty})
+                      {doc.name} - {doc.role}
                     </option>
                   ))}
                 </select>
