@@ -249,8 +249,8 @@ export const Hero = () => {
               <h1 className="sr-only">Dr. Soujanya's Mother & Mind Care</h1>
             </div>
 
-            {/* Subheadline */}
-            <p className="text-xs sm:text-base text-slate-600 mb-4 sm:mb-6 max-w-2xl leading-relaxed">
+            {/* Subheadline Slogan */}
+            <p className="text-sm sm:text-lg md:text-xl text-slate-700 mb-5 sm:mb-7 max-w-2xl leading-relaxed font-normal">
               {hero.subheadline}
             </p>
 

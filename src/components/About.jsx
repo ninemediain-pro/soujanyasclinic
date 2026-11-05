@@ -68,12 +68,12 @@ export const About = () => {
             </h2>
 
             {/* Mission Statement */}
-            <p className="text-base sm:text-lg text-slate-700 mb-4 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-800 mb-5 leading-relaxed font-normal">
               {about.missionText}
             </p>
 
             {/* Approach Statement */}
-            <p className="text-sm sm:text-base text-slate-600 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
               {about.approachText}
             </p>
 
@@ -85,7 +85,7 @@ export const About = () => {
                   className="flex items-start gap-3 p-3 sm:p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-xs hover:border-slate-300 transition-all"
                 >
                   <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
+                  <span className="text-sm sm:text-base font-semibold text-slate-800 leading-snug">
                     {highlight}
                   </span>
                 </div>

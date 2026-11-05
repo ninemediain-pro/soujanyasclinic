@@ -28,7 +28,7 @@ export const Doctors = ({ onSelectDoctor }) => {
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">
             Meet Our Doctors
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-700 leading-relaxed font-normal">
             Specialized clinical care and dedicated guidance tailored for woman and all the other mental health issues.
           </p>
         </div>
@@ -89,12 +89,12 @@ export const Doctors = ({ onSelectDoctor }) => {
                 </h3>
 
                 {/* Qualifications */}
-                <p className="text-xs font-semibold text-slate-600 mb-3 tracking-wide">
+                <p className="text-sm font-semibold text-slate-700 mb-3 tracking-wide">
                   {doctor.qualifications}
                 </p>
 
                 {/* Brief Bio */}
-                <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                <p className="text-base text-slate-700 leading-relaxed mb-6 font-normal">
                   {doctor.bio}
                 </p>
 
@@ -206,7 +206,7 @@ export const Doctors = ({ onSelectDoctor }) => {
                     <User className="w-6 h-6 text-slate-300" />
                   </div>
                 )}
-                <div className="text-xs sm:text-sm text-slate-700 leading-relaxed italic pt-1">
+                <div className="text-sm sm:text-base text-slate-800 leading-relaxed italic pt-1 font-medium">
                   "{activeDoctorModal.fullArticle?.intro || activeDoctorModal.bio}"
                 </div>
               </div>
@@ -216,19 +216,19 @@ export const Doctors = ({ onSelectDoctor }) => {
                 <div className="space-y-6">
                   {activeDoctorModal.fullArticle.sections.map((section, idx) => (
                     <div key={idx} className="space-y-2">
-                      <h3 className="text-lg font-bold text-slate-900 text-left">
+                      <h3 className="text-xl font-bold text-slate-900 text-left">
                         {section.title}
                       </h3>
                       {section.content && (
-                        <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-left">
+                        <p className="text-base sm:text-lg text-slate-700 leading-relaxed text-left font-normal">
                           {section.content}
                         </p>
                       )}
                       {section.bullets && (
-                        <ul className="space-y-2 pt-1">
+                        <ul className="space-y-2.5 pt-1">
                           {section.bullets.map((bullet, bIdx) => (
-                            <li key={bIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 text-left">
-                              <CheckCircle2 className="w-4 h-4 text-slate-900 shrink-0 mt-0.5" />
+                            <li key={bIdx} className="flex items-start gap-2.5 text-sm sm:text-base text-slate-700 text-left">
+                              <CheckCircle2 className="w-4 h-4 text-slate-900 shrink-0 mt-1" />
                               <span>{bullet}</span>
                             </li>
                           ))}
@@ -238,7 +238,7 @@ export const Doctors = ({ onSelectDoctor }) => {
                   ))}
                 </div>
               ) : (
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
                   {activeDoctorModal.bio}
                 </p>
               )}

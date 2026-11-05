@@ -29,7 +29,7 @@ export const Footer = ({ onNavigate }) => {
               />
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
+            <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-sm">
               {footer.description}
             </p>
 

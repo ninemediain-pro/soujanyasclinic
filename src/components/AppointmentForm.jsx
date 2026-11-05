@@ -220,7 +220,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">
             {appointment.title}
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-700 leading-relaxed font-normal">
             {appointment.subtitle}
           </p>
         </div>

@@ -47,7 +47,7 @@ export const Services = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-4">
             Integrated Mother & Mind Care
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-700 leading-relaxed font-normal">
             Personalized, ethical, and compassionate outpatient clinical services spanning women's health, obstetrics, and psychiatric care.
           </p>
         </div>
@@ -69,7 +69,7 @@ export const Services = () => {
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
                   Featured Clinical Specialities & Services
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-500">
+                <p className="text-sm sm:text-base text-slate-600 font-medium">
                   Comprehensive care by Award-winning Gynecologist & Senior Consultant Psychiatrist
                 </p>
               </div>
@@ -241,7 +241,7 @@ export const Services = () => {
               <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2">
                 All Conditions Treated & Services Provided
               </h3>
-              <p className="text-xs sm:text-sm text-slate-500">
+              <p className="text-base sm:text-lg text-slate-600 font-medium">
                 Comprehensive outpatient clinical care offered across our two specialized departments.
               </p>
             </div>
@@ -263,13 +263,13 @@ export const Services = () => {
                       <h4 className="text-lg sm:text-xl font-bold text-slate-900">
                         {clinicalDirectory.gynaecology.category}
                       </h4>
-                      <p className="text-xs font-semibold text-slate-600">
+                      <p className="text-sm font-semibold text-slate-700">
                         {clinicalDirectory.gynaecology.doctorName} • {clinicalDirectory.gynaecology.doctorTitle}
                       </p>
                     </div>
                   </div>
 
-                  <p className="text-xs text-slate-600 mb-5 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-700 font-medium mb-5 leading-relaxed">
                     Specialized women's reproductive health, normal deliveries, minimally invasive laparoscopic surgeries, fertility evaluation, and preventive screening.
                   </p>
 
@@ -304,13 +304,13 @@ export const Services = () => {
                       <h4 className="text-lg sm:text-xl font-bold text-slate-900">
                         {clinicalDirectory.psychiatry.category}
                       </h4>
-                      <p className="text-xs font-semibold text-slate-600">
+                      <p className="text-sm font-semibold text-slate-700">
                         {clinicalDirectory.psychiatry.doctorName} • {clinicalDirectory.psychiatry.doctorTitle}
                       </p>
                     </div>
                   </div>
 
-                  <p className="text-xs text-slate-600 mb-5 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-700 font-medium mb-5 leading-relaxed">
                     Senior clinical psychiatric consultation, evidence-based psychotherapy, sleep medicine, de-addiction protocols, crisis support, and cognitive evaluations.
                   </p>
 
