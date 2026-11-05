@@ -191,9 +191,9 @@ export const Hero = () => {
         <div className="flex items-center justify-between gap-2 w-full mb-3 sm:mb-6">
           
           {/* Category Pill Badge */}
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-2xs text-[11px] sm:text-xs">
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#0145f2] text-white text-[9px] sm:text-[10px] font-bold tracking-wider uppercase">
-              <Sparkles className="w-2.5 h-2.5 text-blue-200" />
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-2xs text-xs sm:text-sm">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#0145f2] text-white text-[10px] sm:text-xs font-bold tracking-wider uppercase">
+              <Sparkles className="w-3 h-3 text-blue-200" />
               <span>{hero.badgeTag || "Speciality Clinic"}</span>
             </span>
             <span className="font-semibold text-slate-800 hidden md:inline">
@@ -202,14 +202,14 @@ export const Hero = () => {
           </div>
 
           {/* Moving Animation Ticker Badge with Project-Related Text */}
-          <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-2xs max-w-[210px] sm:max-w-[340px] md:max-w-[440px] overflow-hidden group/ticker shrink-0">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-2xs max-w-[230px] sm:max-w-[360px] md:max-w-[460px] overflow-hidden group/ticker shrink-0">
             {/* Live Indicator Dot & Label */}
             <div className="flex items-center gap-1.5 shrink-0 pr-2 border-r border-slate-200/80">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700">Live</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Live</span>
             </div>
 
             {/* Continuous Moving Ticker Track */}
@@ -220,7 +220,7 @@ export const Hero = () => {
 
               <div className="animate-mini-marquee whitespace-nowrap flex gap-4 w-max">
                 {[...tickerItems, ...tickerItems].map((item, idx) => (
-                  <span key={idx} className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-semibold text-slate-800">
+                  <span key={idx} className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-800">
                     <span>{item}</span>
                   </span>
                 ))}
@@ -244,22 +244,22 @@ export const Hero = () => {
               <img 
                 src="/clinic-hero-brand.png" 
                 alt="Dr. Soujanya's Mother & Mind Care" 
-                className="w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-[520px] h-auto object-contain object-left drop-shadow-xs"
+                className="w-full max-w-[340px] sm:max-w-[440px] md:max-w-[500px] lg:max-w-[550px] h-auto object-contain object-left drop-shadow-xs"
               />
               <h1 className="sr-only">Dr. Soujanya's Mother & Mind Care</h1>
             </div>
 
             {/* Subheadline Slogan */}
-            <p className="text-sm sm:text-lg md:text-xl text-slate-700 mb-5 sm:mb-7 max-w-2xl leading-relaxed font-normal">
+            <p className="text-base sm:text-xl md:text-2xl text-slate-800 mb-6 sm:mb-8 max-w-2xl leading-relaxed font-normal">
               {hero.subheadline}
             </p>
 
             {/* Action Buttons: 2-Column Responsive Row + Direct Hotline */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 w-full sm:w-auto mb-5 sm:mb-8">
-              <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-2 sm:gap-3 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto mb-6 sm:mb-9">
+              <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-2.5 sm:gap-3.5 w-full sm:w-auto">
                 <a
                   href="#appointment"
-                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-[#0145f2] hover:bg-[#0038cb] shadow-md sm:shadow-lg shadow-[#0145f2]/25 hover:shadow-xl hover:shadow-[#0145f2]/35 transition-all duration-200 active:scale-95 group border border-[#0145f2] text-center"
+                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-[#0145f2] hover:bg-[#0038cb] shadow-md sm:shadow-lg shadow-[#0145f2]/25 hover:shadow-xl hover:shadow-[#0145f2]/35 transition-all duration-200 active:scale-95 group border border-[#0145f2] text-center"
                 >
                   <Calendar className="w-4 h-4 text-blue-100 group-hover:scale-110 transition-transform shrink-0" />
                   <span className="truncate">{hero.primaryCtaText}</span>
@@ -267,7 +267,7 @@ export const Hero = () => {
 
                 <a
                   href="#services"
-                  className="inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-800 bg-white hover:bg-blue-50/60 hover:text-[#0145f2] border border-slate-200 hover:border-[#0145f2]/40 shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95 text-center truncate"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-semibold text-slate-800 bg-white hover:bg-blue-50/60 hover:text-[#0145f2] border border-slate-200 hover:border-[#0145f2]/40 shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95 text-center truncate"
                 >
                   <span className="truncate">{hero.secondaryCtaText}</span>
                 </a>
@@ -276,34 +276,34 @@ export const Hero = () => {
               {clinicData.contact?.phone && (
                 <a
                   href={`tel:${clinicData.contact.phoneTel || clinicData.contact.phone}`}
-                  className="inline-flex items-center justify-center gap-1.5 py-1.5 sm:py-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 sm:bg-white/80 sm:hover:bg-white sm:border sm:border-slate-200/80 transition-all text-center"
+                  className="inline-flex items-center justify-center gap-1.5 py-2 sm:py-3.5 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-900 sm:bg-white/80 sm:hover:bg-white sm:border sm:border-slate-200/80 transition-all text-center"
                   title="Direct Clinic Phone Desk"
                 >
-                  <Phone className="w-3.5 h-3.5 text-slate-500" />
-                  <span className="font-mono text-slate-700">{clinicData.contact.phone}</span>
-                  <span className="text-[10px] text-slate-500 sm:hidden">• Helpline</span>
+                  <Phone className="w-4 h-4 text-slate-600" />
+                  <span className="font-mono text-slate-800 font-bold">{clinicData.contact.phone}</span>
+                  <span className="text-[11px] text-slate-500 sm:hidden">• Helpline</span>
                 </a>
               )}
             </div>
 
             {/* 3-Pillar Clinical Trust Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 w-full pt-4 sm:pt-6 border-t border-slate-200/80">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3.5 w-full pt-4 sm:pt-6 border-t border-slate-200/80">
               {hero.highlights.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="group relative p-2.5 sm:p-3 rounded-xl bg-white/85 backdrop-blur-sm border border-slate-200/80 shadow-2xs hover:shadow-sm hover:border-slate-300 transition-all duration-200 flex sm:flex-col items-center sm:items-start justify-between sm:justify-between gap-2"
+                  className="group relative p-3 sm:p-3.5 rounded-xl bg-white/85 backdrop-blur-sm border border-slate-200/80 shadow-2xs hover:shadow-sm hover:border-slate-300 transition-all duration-200 flex sm:flex-col items-center sm:items-start justify-between sm:justify-between gap-2"
                 >
-                  <div className="flex items-center gap-2 sm:gap-2.5">
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center shrink-0 shadow-xs">
-                      {idx === 0 && <UserCheck className="w-3.5 h-3.5 text-slate-200" />}
-                      {idx === 1 && <Clock className="w-3.5 h-3.5 text-slate-200" />}
-                      {idx === 2 && <ShieldCheck className="w-3.5 h-3.5 text-slate-200" />}
+                  <div className="flex items-center gap-2.5 sm:gap-3">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-slate-900 text-white flex items-center justify-center shrink-0 shadow-xs">
+                      {idx === 0 && <UserCheck className="w-4 h-4 text-slate-200" />}
+                      {idx === 1 && <Clock className="w-4 h-4 text-slate-200" />}
+                      {idx === 2 && <ShieldCheck className="w-4 h-4 text-slate-200" />}
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-slate-900 leading-tight">
+                      <h4 className="text-sm sm:text-base font-bold text-slate-900 leading-tight">
                         {item.label}
                       </h4>
-                      <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-snug">
+                      <p className="text-xs sm:text-sm text-slate-600 font-medium leading-snug mt-0.5">
                         {item.detail}
                       </p>
                     </div>
@@ -384,10 +384,10 @@ export const Hero = () => {
               </div>
 
               {/* Floating Top-Left Status Pill */}
-              <div className="absolute top-7 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full shadow-md border border-slate-200/80 flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-slate-800 z-20">
-                <span className="relative flex h-2 w-2">
+              <div className="absolute top-7 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-md border border-slate-200/80 flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-800 z-20">
+                <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                 </span>
                 <span>{activeSlide.badge}</span>
               </div>
@@ -423,22 +423,22 @@ export const Hero = () => {
                 <div className="p-2.5 sm:p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-2xl transition-all duration-300">
                   
                   {/* Doctor Title & Direct CTA */}
-                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                  <div className="flex items-center justify-between gap-2 mb-2">
                     <div className="min-w-0 pr-1">
                       <div className="flex items-center gap-1.5">
-                        <h3 className="text-sm font-extrabold text-slate-900 leading-tight truncate">
+                        <h3 className="text-base sm:text-lg font-black text-slate-900 leading-tight truncate">
                           {activeSlide.name}
                         </h3>
                         <BadgeCheck className="w-4 h-4 text-emerald-600 shrink-0" />
                       </div>
-                      <p className="text-[10px] sm:text-[11px] text-slate-600 font-semibold leading-snug mt-0.5">
+                      <p className="text-xs sm:text-sm text-slate-700 font-semibold leading-snug mt-0.5">
                         {activeSlide.degrees}
                       </p>
                     </div>
 
                     <a
                       href="#appointment"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-[11px] sm:text-xs font-semibold shadow-md shrink-0 transition-transform active:scale-95 group/btn"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold shadow-md shrink-0 transition-transform active:scale-95 group/btn"
                     >
                       <span>Book Slot</span>
                       <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover/btn:translate-x-0.5 transition-transform" />
@@ -446,11 +446,11 @@ export const Hero = () => {
                   </div>
 
                   {/* Speciality Micro-Tags Pill Row */}
-                  <div className="flex flex-wrap items-center gap-1 pt-1.5 border-t border-slate-200/70">
+                  <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-slate-200/70">
                     {activeSlide.tags.map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[9px] sm:text-[10px] font-semibold bg-slate-100 text-slate-700 border border-slate-200/60"
+                        className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] sm:text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200/60"
                       >
                         {tag}
                       </span>
@@ -509,7 +509,7 @@ export const Hero = () => {
             {[...tickerItems, ...tickerItems, ...tickerItems].map((text, idx) => (
               <div 
                 key={idx}
-                className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold text-slate-700 whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-800 whitespace-nowrap"
               >
                 <span>{text}</span>
                 <span className="text-slate-300 mx-2">•</span>
