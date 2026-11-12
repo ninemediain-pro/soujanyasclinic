@@ -299,7 +299,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
               <button
                 type="button"
                 onClick={handleSmoothClose}
-                className="w-full py-2.5 rounded-xl font-semibold text-xs text-white bg-[#0145f2] hover:bg-[#0038cb] transition-colors cursor-pointer shadow-sm border border-[#0145f2]"
+                className="w-full py-2.5 rounded-xl font-semibold text-xs text-white bg-[#1b2a4a] hover:bg-[#121e36] transition-colors cursor-pointer shadow-sm border border-[#1b2a4a]"
               >
                 Done
               </button>
@@ -458,7 +458,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold text-white bg-[#0145f2] hover:bg-[#0038cb] shadow-md shadow-[#0145f2]/25 hover:shadow-lg transition-all active:scale-98 disabled:opacity-70 border border-[#0145f2] cursor-pointer"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold text-white bg-[#1b2a4a] hover:bg-[#121e36] shadow-md shadow-[#1b2a4a]/25 hover:shadow-lg transition-all active:scale-98 disabled:opacity-70 border border-[#1b2a4a] cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>

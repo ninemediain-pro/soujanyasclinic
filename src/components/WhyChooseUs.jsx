@@ -11,13 +11,13 @@ export const WhyChooseUs = () => {
   const infiniteItems = [...whyChooseUs, ...whyChooseUs, ...whyChooseUs, ...whyChooseUs];
 
   return (
-    <section id="why-us" className="py-20 bg-[#edf1f5] border-b border-slate-200/80 overflow-hidden">
+    <section id="why-us" className="py-20 bg-[#f0f4f8] border-b border-slate-200/80 overflow-hidden">
       <div className="clinic-container">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#0145f2]/10 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-[#0145f2]/20">
-            <Shield className="w-3.5 h-3.5 text-[#0145f2]" />
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#1b2a4a]/10 text-[#1b2a4a] text-xs font-semibold uppercase tracking-wider mb-4 border border-[#1b2a4a]/20">
+            <Shield className="w-3.5 h-3.5 text-[#1b2a4a]" />
             <span>Our Commitments</span>
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">
@@ -53,12 +53,12 @@ export const WhyChooseUs = () => {
                   >
                     <div>
                       {/* Icon */}
-                      <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0145f2] flex items-center justify-center mb-5 group-hover:bg-[#0145f2] group-hover:text-white transition-colors duration-300 shadow-2xs border border-blue-100">
+                      <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#1b2a4a] flex items-center justify-center mb-5 group-hover:bg-[#1b2a4a] group-hover:text-white transition-colors duration-300 shadow-2xs border border-blue-100">
                         <DynamicIcon name={item.iconName} className="w-6 h-6" />
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2.5 group-hover:text-[#0145f2] transition-colors line-clamp-2 h-[54px] flex items-center">
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2.5 group-hover:text-[#1b2a4a] transition-colors line-clamp-2 h-[54px] flex items-center">
                         {item.title}
                       </h3>
 
@@ -70,7 +70,7 @@ export const WhyChooseUs = () => {
 
                     {/* Trust Pillar Highlight */}
                     <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-slate-800">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#0145f2]"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1b2a4a]"></span>
                       <span>Verified Practice Standard</span>
                     </div>
                   </div>

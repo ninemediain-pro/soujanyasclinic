@@ -30,9 +30,9 @@ export const Contact = () => {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Address Card */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 hover:border-[#0145f2]/40 hover:shadow-md transition-all shadow-xs">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 hover:border-[#1b2a4a]/40 hover:shadow-md transition-all shadow-xs">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#0145f2] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#0145f2]/20 border border-[#0145f2]">
+                <div className="w-12 h-12 rounded-xl bg-[#1b2a4a] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#1b2a4a]/20 border border-[#1b2a4a]">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -44,7 +44,7 @@ export const Contact = () => {
                     href={contact.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0145f2] hover:text-[#0038cb] underline underline-offset-2"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1b2a4a] hover:text-[#0038cb] underline underline-offset-2"
                   >
                     <span>View on Google Maps</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -54,9 +54,9 @@ export const Contact = () => {
             </div>
 
             {/* Telephone Card */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 hover:border-[#0145f2]/40 hover:shadow-md transition-all shadow-xs">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 hover:border-[#1b2a4a]/40 hover:shadow-md transition-all shadow-xs">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#0145f2] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#0145f2]/20 border border-[#0145f2]">
+                <div className="w-12 h-12 rounded-xl bg-[#1b2a4a] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#1b2a4a]/20 border border-[#1b2a4a]">
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -64,7 +64,7 @@ export const Contact = () => {
                   <p className="text-xs text-slate-500 mb-1">For appointment inquiries & reception desk:</p>
                   <a
                     href={`tel:${contact.phoneTel || contact.phone}`}
-                    className="text-base font-bold text-slate-900 hover:text-[#0145f2] transition-colors"
+                    className="text-base font-bold text-slate-900 hover:text-[#1b2a4a] transition-colors"
                   >
                     {contact.phone}
                   </a>
@@ -73,9 +73,9 @@ export const Contact = () => {
             </div>
 
             {/* Email Card */}
-            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 hover:border-[#0145f2]/40 hover:shadow-md transition-all shadow-xs">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 hover:border-[#1b2a4a]/40 hover:shadow-md transition-all shadow-xs">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#0145f2] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#0145f2]/20 border border-[#0145f2]">
+                <div className="w-12 h-12 rounded-xl bg-[#1b2a4a] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#1b2a4a]/20 border border-[#1b2a4a]">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -86,7 +86,7 @@ export const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => handleEmailClick(e, contact.email)}
-                    className="text-sm font-semibold text-slate-900 hover:text-[#0145f2] transition-colors cursor-pointer"
+                    className="text-sm font-semibold text-slate-900 hover:text-[#1b2a4a] transition-colors cursor-pointer"
                     title="Send email"
                   >
                     {contact.email}
@@ -164,7 +164,7 @@ export const Contact = () => {
                   href={contact.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#0145f2] hover:bg-[#0038cb] shadow-md shadow-[#0145f2]/25 transition-all active:scale-95 shrink-0"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#1b2a4a] hover:bg-[#121e36] shadow-md shadow-[#1b2a4a]/25 transition-all active:scale-95 shrink-0"
                 >
                   <span>Open Google Maps</span>
                   <ExternalLink className="w-3.5 h-3.5" />

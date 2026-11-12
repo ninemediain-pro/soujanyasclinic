@@ -145,7 +145,7 @@ export function App() {
 
   // Default Home Page View
   return (
-    <div className="min-h-screen flex flex-col bg-[#edf1f5] text-slate-900 antialiased selection:bg-[#0145f2] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#f0f4f8] text-slate-900 antialiased selection:bg-[#1b2a4a] selection:text-white">
       {/* 1. Navbar: Sticky */}
       <Navbar />
 

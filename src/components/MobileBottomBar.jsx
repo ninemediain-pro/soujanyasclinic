@@ -46,7 +46,7 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
               className="w-full h-full object-cover rounded-[14px]"
             />
           </div>
-          <span className="text-[11px] font-bold tracking-tight text-slate-700 group-hover:text-[#0145f2]">
+          <span className="text-[11px] font-bold tracking-tight text-slate-700 group-hover:text-[#1b2a4a]">
             Appointment
           </span>
         </button>
@@ -56,7 +56,7 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
           <button
             type="button"
             onClick={handleLogoClick}
-            className="w-15 h-15 rounded-full bg-white p-1.5 shadow-[0_6px_20px_rgba(1,69,242,0.18)] border-2 border-[#0145f2] flex items-center justify-center active:scale-95 transition-all cursor-pointer group"
+            className="w-15 h-15 rounded-full bg-white p-1.5 shadow-[0_6px_20px_rgba(27,42,74,0.2)] border-2 border-[#1b2a4a] flex items-center justify-center active:scale-95 transition-all cursor-pointer group"
             aria-label="Clinic home"
             title="Dr. Soujanya's Mother and Mind Care"
           >
@@ -67,12 +67,12 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
                 className="w-full h-full object-contain rounded-full group-hover:scale-105 transition-transform"
               />
             ) : (
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-[#0145f2] to-[#0031b8] flex items-center justify-center text-white font-bold text-xs">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-[#1b2a4a] to-[#121e36] flex items-center justify-center text-white font-bold text-xs">
                 MMC
               </div>
             )}
           </button>
-          <span className="text-[10px] font-bold text-[#0145f2] mt-0.5 tracking-tight">
+          <span className="text-[10px] font-bold text-[#1b2a4a] mt-0.5 tracking-tight">
             Home
           </span>
         </div>
@@ -80,7 +80,7 @@ export const MobileBottomBar = ({ onSelectAppointment }) => {
         {/* 3. Contact Button (Toy Medical Support Phone Icon - Directly calls on mobile) */}
         <a
           href={phoneHref}
-          className="flex-1 flex flex-col items-center justify-center gap-1 py-1 text-slate-700 hover:text-[#0145f2] active:scale-90 transition-all cursor-pointer group"
+          className="flex-1 flex flex-col items-center justify-center gap-1 py-1 text-slate-700 hover:text-[#1b2a4a] active:scale-90 transition-all cursor-pointer group"
           aria-label="Call clinic directly"
         >
           <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200/80 p-0.5 flex items-center justify-center shadow-sm border border-slate-200 group-hover:scale-105 group-hover:shadow-md transition-all overflow-hidden">

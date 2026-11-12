@@ -14,8 +14,8 @@ export const clinicData = {
   tagline: "Woman Well-being| Mental Health| Therapies",
   location: "Pragati Nagar, Hyderabad",
 
-  // Official Clinic Emblem & Navbar Logo
-  logoUrl: "/clinic-emblem-official.png",
+  // Official Clinic Emblem & Navbar Logo (Glowing Golden Disc with Blue Lines from Signboard)
+  logoUrl: "/clinic-emblem-board.png",
   bannerLogoUrl: "/clinic-logo-dark.png",
   officialLogoDark: "/clinic-logo-dark.png",
   officialLogoWhite: "/clinic-logo-white.png",

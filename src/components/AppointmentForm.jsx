@@ -209,12 +209,12 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
   const whatsappRedirectUrl = submissionData ? getWhatsAppBookingUrl(submissionData) : null;
 
   return (
-    <section id="appointment" className="py-20 bg-[#edf1f5] border-b border-slate-200/80">
+    <section id="appointment" className="py-20 bg-[#f0f4f8] border-b border-slate-200/80">
       <div className="max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#0145f2]/10 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-[#0145f2]/20">
+          <span className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#1b2a4a]/10 text-[#1b2a4a] text-xs font-semibold uppercase tracking-wider mb-4 border border-[#1b2a4a]/20">
             {appointment.badge}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">
@@ -278,7 +278,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
             <button
               type="button"
               onClick={() => setRequestSubmitted(false)}
-              className="px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#0145f2] hover:bg-[#0038cb] transition-all shadow-md shadow-[#0145f2]/20 active:scale-95 cursor-pointer border border-[#0145f2]"
+              className="px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#1b2a4a] hover:bg-[#121e36] transition-all shadow-md shadow-[#1b2a4a]/20 active:scale-95 cursor-pointer border border-[#1b2a4a]"
             >
               Submit Another Request
             </button>
@@ -471,7 +471,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-semibold text-white bg-[#0145f2] hover:bg-[#0038cb] shadow-xl shadow-[#0145f2]/20 hover:shadow-2xl hover:shadow-[#0145f2]/30 transition-all duration-200 active:scale-98 disabled:opacity-70 disabled:cursor-not-allowed focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2] border border-[#0145f2]"
+                  className="w-full flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-semibold text-white bg-[#1b2a4a] hover:bg-[#121e36] shadow-xl shadow-[#1b2a4a]/20 hover:shadow-2xl hover:shadow-[#1b2a4a]/30 transition-all duration-200 active:scale-98 disabled:opacity-70 disabled:cursor-not-allowed focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2] border border-[#1b2a4a]"
                 >
                   {isSubmitting ? (
                     <>

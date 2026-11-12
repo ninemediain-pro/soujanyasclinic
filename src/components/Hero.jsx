@@ -143,12 +143,12 @@ export const Hero = () => {
   ];
 
   return (
-    <section id="home" className="relative isolate overflow-clip pt-[72px] pb-8 sm:pt-[100px] sm:pb-16 md:pt-[104px] lg:pt-[112px] lg:pb-20 bg-[#edf1f5] border-b border-slate-200/80">
+    <section id="home" className="relative isolate overflow-clip pt-[72px] pb-8 sm:pt-[100px] sm:pb-16 md:pt-[104px] lg:pt-[112px] lg:pb-20 bg-[#f0f4f8] border-b border-slate-200/80">
       {/* =========================================================================
           OFFICIAL CLINIC VIDEO BACKGROUND (Complete Home Screen Backdrop)
          ========================================================================= */}
       <div
-        className="absolute inset-0 -z-20 w-full h-full overflow-clip select-none pointer-events-none bg-[#edf1f5]"
+        className="absolute inset-0 -z-20 w-full h-full overflow-clip select-none pointer-events-none bg-[#f0f4f8]"
         aria-hidden="true"
       >
         {/* Sticky viewport-sized frame: keeps the video sharp on tall mobile layouts while content scrolls */}
@@ -176,7 +176,7 @@ export const Hero = () => {
         {/* Desktop: stronger on the text side (left), video fully open on the right */}
         <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-white/80 via-white/45 to-white/5" />
         {/* Soft fade into the next section */}
-        <div className="absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-t from-[#edf1f5] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-t from-[#f0f4f8] to-transparent" />
       </div>
 
       {/* Subtle Ambient Radial Lighting Blurs */}
@@ -192,8 +192,8 @@ export const Hero = () => {
           
           {/* Category Pill Badge */}
           <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-2xs text-xs sm:text-sm">
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#0145f2] text-white text-[10px] sm:text-xs font-bold tracking-wider uppercase">
-              <Sparkles className="w-3 h-3 text-blue-200" />
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#1b2a4a] text-white text-[10px] sm:text-xs font-bold tracking-wider uppercase">
+              <Sparkles className="w-3 h-3 text-[#f59e0b]" />
               <span>{hero.badgeTag || "Speciality Clinic"}</span>
             </span>
             <span className="font-semibold text-slate-800 hidden md:inline">
@@ -239,12 +239,12 @@ export const Hero = () => {
              ----------------------------------------------------------------------- */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col items-start text-left">
             
-            {/* Official Clinic Brand Logo Banner (Replacing emblem & headline as requested) */}
+            {/* Official Clinic Brand Logo Banner (Board Color Graphic) */}
             <div className="mb-4 sm:mb-6">
               <img 
-                src="/clinic-hero-brand.png" 
+                src="/clinic-hero-board-logo.png" 
                 alt="Dr. Soujanya's Mother & Mind Care" 
-                className="w-full max-w-[340px] sm:max-w-[440px] md:max-w-[500px] lg:max-w-[550px] h-auto object-contain object-left drop-shadow-xs"
+                className="w-full max-w-[340px] sm:max-w-[460px] md:max-w-[540px] lg:max-w-[580px] h-auto object-contain object-left drop-shadow-xs"
               />
               <h1 className="sr-only">Dr. Soujanya's Mother & Mind Care</h1>
             </div>
@@ -259,15 +259,15 @@ export const Hero = () => {
               <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-2.5 sm:gap-3.5 w-full sm:w-auto">
                 <a
                   href="#appointment"
-                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-[#0145f2] hover:bg-[#0038cb] shadow-md sm:shadow-lg shadow-[#0145f2]/25 hover:shadow-xl hover:shadow-[#0145f2]/35 transition-all duration-200 active:scale-95 group border border-[#0145f2] text-center"
+                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-[#1b2a4a] hover:bg-[#121e36] shadow-md sm:shadow-lg shadow-[#1b2a4a]/25 hover:shadow-xl hover:shadow-[#1b2a4a]/35 transition-all duration-200 active:scale-95 group border border-[#1b2a4a] text-center"
                 >
-                  <Calendar className="w-4 h-4 text-blue-100 group-hover:scale-110 transition-transform shrink-0" />
+                  <Calendar className="w-4 h-4 text-amber-200 group-hover:scale-110 transition-transform shrink-0" />
                   <span className="truncate">{hero.primaryCtaText}</span>
                 </a>
 
                 <a
                   href="#services"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-semibold text-slate-800 bg-white hover:bg-blue-50/60 hover:text-[#0145f2] border border-slate-200 hover:border-[#0145f2]/40 shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95 text-center truncate"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-semibold text-slate-800 bg-white hover:bg-blue-50/60 hover:text-[#1b2a4a] border border-slate-200 hover:border-[#1b2a4a]/40 shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95 text-center truncate"
                 >
                   <span className="truncate">{hero.secondaryCtaText}</span>
                 </a>

@@ -50,30 +50,30 @@ export const Navbar = () => {
   return (
     <>
       {/* Top Utility Announcement & Contact Bar - Electric Blue Theme */}
-      <div className="w-full bg-[#0145f2] text-white text-[11px] sm:text-xs border-b border-[#0038cb] shadow-xs">
+      <div className="w-full bg-[#1b2a4a] text-white text-[11px] sm:text-xs border-b border-[#121e36] shadow-xs">
         <div className="clinic-container max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4 py-1.5 sm:py-2">
           <div className="flex items-center gap-3 sm:gap-6">
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-blue-100 font-normal">
-              <MapPin className="w-3.5 h-3.5 text-blue-200 shrink-0" />
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-amber-200 font-normal">
+              <MapPin className="w-3.5 h-3.5 text-[#f59e0b] shrink-0" />
               <span>{clinicData.location || "Pragati Nagar, Hyderabad"}</span>
             </span>
             <span className="inline-flex items-center gap-1.5 text-white font-medium">
-              <Clock className="w-3.5 h-3.5 text-blue-200 shrink-0" />
+              <Clock className="w-3.5 h-3.5 text-[#f59e0b] shrink-0" />
               <span>Mon - Sat: 9 AM - 9 PM</span>
             </span>
           </div>
 
           <div className="flex items-center gap-2 sm:gap-4 font-medium">
             <span className="hidden md:inline-flex items-center gap-1 text-white text-[11px] bg-white/15 px-2.5 py-0.5 rounded-full border border-white/20">
-              <ShieldCheck className="w-3 h-3 text-blue-100" />
+              <ShieldCheck className="w-3 h-3 text-amber-200" />
               Verified Specialists
             </span>
             {clinicData.contact?.phone && (
               <a
                 href={`tel:${clinicData.contact.phoneTel || clinicData.contact.phone}`}
-                className="inline-flex items-center gap-1.5 text-white hover:text-blue-100 transition-colors"
+                className="inline-flex items-center gap-1.5 text-white hover:text-amber-200 transition-colors"
               >
-                <Phone className="w-3 h-3 text-blue-200" />
+                <Phone className="w-3 h-3 text-[#f59e0b]" />
                 <span>{clinicData.contact.phone}</span>
               </a>
             )}
@@ -88,7 +88,7 @@ export const Navbar = () => {
           {/* Main Rounded Capsule Pill (Transparent Glass on Home, Solid White when Scrolled) */}
           <div
             className={`rounded-full transition-all duration-300 border ${scrolled
-                ? 'bg-white/95 backdrop-blur-md shadow-[0_10px_35px_-5px_rgba(1,69,242,0.12)] border-[#d0dbe7] py-1.5 sm:py-2.5 px-3 sm:px-6'
+                ? 'bg-white/95 backdrop-blur-md shadow-[0_10px_35px_-5px_rgba(27,42,74,0.14)] border-[#cbd8e6] py-1.5 sm:py-2.5 px-3 sm:px-6'
                 : 'bg-white/15 hover:bg-white/25 backdrop-blur-md shadow-none border-white/30 py-2 sm:py-3 px-3 sm:px-6'
               }`}
           >
@@ -97,14 +97,14 @@ export const Navbar = () => {
               {/* Brand Logo & Clinic Info (Clinic Name kept beside logo in Navbar only) */}
               <a
                 href="#home"
-                className="flex items-center gap-2 sm:gap-3 group focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2] rounded-full p-0.5 min-w-0 flex-1 sm:flex-initial"
+                className="flex items-center gap-2 sm:gap-3 group focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#1b2a4a] rounded-full p-0.5 min-w-0 flex-1 sm:flex-initial"
                 aria-label={clinicData.clinicName}
                 title={clinicData.clinicName}
               >
                 {clinicData.logoUrl ? (
                   <div className={`relative p-1 rounded-full shadow-2xs group-hover:shadow-sm group-hover:scale-105 transition-all shrink-0 border ${
                     scrolled 
-                      ? 'bg-gradient-to-tr from-[#edf1f5] via-white to-blue-50 border-[#d0dbe7]' 
+                      ? 'bg-gradient-to-tr from-[#edf1f5] via-white to-blue-50 border-[#cbd8e6]' 
                       : 'bg-white/40 backdrop-blur-xs border-white/50'
                   }`}>
                     <img
@@ -114,19 +114,19 @@ export const Navbar = () => {
                     />
                   </div>
                 ) : (
-                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#0145f2] flex items-center justify-center text-white shadow-sm shrink-0">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#1b2a4a] flex items-center justify-center text-white shadow-sm shrink-0">
                     <Activity className="w-5 h-5 text-white" />
                   </div>
                 )}
 
                 <div className="flex flex-col min-w-0 pr-1">
-                  <span className="font-bold text-xs sm:text-sm md:text-base text-slate-900 group-hover:text-[#0145f2] transition-colors leading-tight tracking-tight truncate">
+                  <span className="font-bold text-xs sm:text-sm md:text-base text-slate-900 group-hover:text-[#1b2a4a] transition-colors leading-tight tracking-tight truncate">
                     {clinicData.clinicName}
                   </span>
                   <span className={`text-[9px] sm:text-[11px] font-medium tracking-wide flex items-center gap-1.5 truncate mt-0.5 transition-colors ${
                     scrolled ? 'text-slate-500' : 'text-slate-700'
                   }`}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#0145f2] inline-block animate-pulse shrink-0"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1b2a4a] inline-block animate-pulse shrink-0"></span>
                     <span className="truncate">{clinicData.tagline || "Woman Well-being | Mental Health | Therapies"}</span>
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export const Navbar = () => {
               {/* Desktop Navigation Links Pill */}
               <nav className={`hidden lg:flex items-center p-1 rounded-full border shadow-2xs shrink-0 transition-all duration-300 ${
                 scrolled
-                  ? 'bg-[#edf1f5] border-[#d0dbe7]'
+                  ? 'bg-[#f0f4f8] border-[#cbd8e6]'
                   : 'bg-white/30 backdrop-blur-md border-white/40'
               }`} aria-label="Main navigation">
                 {navLinks.map((link) => {
@@ -147,10 +147,10 @@ export const Navbar = () => {
                       key={link.href}
                       href={link.href}
                       className={`relative whitespace-nowrap px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${isActive
-                          ? 'bg-[#0145f2] text-white shadow-xs font-bold border border-[#0145f2]'
+                          ? 'bg-[#1b2a4a] text-white shadow-xs font-bold border border-[#1b2a4a]'
                           : scrolled
-                            ? 'text-slate-600 hover:text-[#0145f2] hover:bg-white/60'
-                            : 'text-slate-800 hover:text-[#0145f2] hover:bg-white/60'
+                            ? 'text-slate-600 hover:text-[#1b2a4a] hover:bg-white/60'
+                            : 'text-slate-800 hover:text-[#1b2a4a] hover:bg-white/60'
                         }`}
                     >
                       {link.label}
@@ -166,20 +166,20 @@ export const Navbar = () => {
                     href={`tel:${clinicData.contact.phoneTel || clinicData.contact.phone}`}
                     className={`hidden xl:inline-flex whitespace-nowrap items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold transition-all duration-300 border shadow-2xs ${
                       scrolled
-                        ? 'text-slate-700 hover:text-[#0145f2] bg-[#edf1f5] hover:bg-white border-[#d0dbe7]'
-                        : 'text-slate-900 hover:text-[#0145f2] bg-white/40 hover:bg-white/70 border-white/40 backdrop-blur-xs'
+                        ? 'text-slate-700 hover:text-[#1b2a4a] bg-[#f0f4f8] hover:bg-white border-[#cbd8e6]'
+                        : 'text-slate-900 hover:text-[#1b2a4a] bg-white/40 hover:bg-white/70 border-white/40 backdrop-blur-xs'
                     }`}
                     title="Call clinic reception desk"
                   >
-                    <Phone className="w-3.5 h-3.5 text-[#0145f2]" />
+                    <Phone className="w-3.5 h-3.5 text-[#1b2a4a]" />
                     <span>{clinicData.contact.phone}</span>
                   </a>
                 )}
                 <a
                   href="#appointment"
-                  className="whitespace-nowrap inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-[#0145f2] hover:bg-[#0038cb] shadow-md shadow-[#0145f2]/25 hover:shadow-lg hover:shadow-[#0145f2]/35 transition-all duration-200 active:scale-95 group focus:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0145f2] border border-[#0145f2]"
+                  className="whitespace-nowrap inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-[#1b2a4a] hover:bg-[#121e36] shadow-md shadow-[#1b2a4a]/25 hover:shadow-lg hover:shadow-[#1b2a4a]/35 transition-all duration-200 active:scale-95 group focus:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#1b2a4a] border border-[#1b2a4a]"
                 >
-                  <Calendar className="w-3.5 h-3.5 text-blue-100 group-hover:scale-110 transition-transform" />
+                  <Calendar className="w-3.5 h-3.5 text-amber-200 group-hover:scale-110 transition-transform" />
                   <span>Book Appointment</span>
                   <ArrowRight className="w-3.5 h-3.5 opacity-80 group-hover:translate-x-0.5 transition-transform" />
                 </a>
@@ -190,10 +190,10 @@ export const Navbar = () => {
                 <button
                   type="button"
                   onClick={() => setAppointmentModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-1 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-[#0145f2] text-white text-xs font-bold shrink-0 hover:bg-[#0038cb] transition-colors active:scale-95 shadow-xs border border-[#0145f2] cursor-pointer"
+                  className="inline-flex items-center justify-center gap-1 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-[#1b2a4a] text-white text-xs font-bold shrink-0 hover:bg-[#121e36] transition-colors active:scale-95 shadow-xs border border-[#1b2a4a] cursor-pointer"
                   aria-label="Open Appointment Form Pop-up"
                 >
-                  <Calendar className="w-3.5 h-3.5 text-blue-100" />
+                  <Calendar className="w-3.5 h-3.5 text-amber-200" />
                   <span>Book</span>
                 </button>
                 <button
@@ -243,8 +243,8 @@ export const Navbar = () => {
                       href={targetHref}
                       onClick={() => setMobileMenuOpen(false)}
                       className={`flex items-center justify-between px-4 py-2.5 rounded-2xl text-sm font-semibold transition-all ${isActive
-                          ? 'bg-[#0145f2] text-white font-bold shadow-xs'
-                          : 'text-slate-700 hover:bg-blue-50 hover:text-[#0145f2]'
+                          ? 'bg-[#1b2a4a] text-white font-bold shadow-xs'
+                          : 'text-slate-700 hover:bg-blue-50 hover:text-[#1b2a4a]'
                         }`}
                     >
                       <span>{link.label}</span>
@@ -261,9 +261,9 @@ export const Navbar = () => {
                       setMobileMenuOpen(false);
                       setAppointmentModalOpen(true);
                     }}
-                    className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-bold text-white bg-[#0145f2] hover:bg-[#0038cb] shadow-md shadow-[#0145f2]/25 transition-all active:scale-98 border border-[#0145f2] cursor-pointer"
+                    className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-bold text-white bg-[#1b2a4a] hover:bg-[#121e36] shadow-md shadow-[#1b2a4a]/25 transition-all active:scale-98 border border-[#1b2a4a] cursor-pointer"
                   >
-                    <Calendar className="w-4 h-4 text-blue-100" />
+                    <Calendar className="w-4 h-4 text-amber-200" />
                     <span>Book an Appointment</span>
                   </button>
 

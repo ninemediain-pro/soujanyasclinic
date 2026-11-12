@@ -35,13 +35,13 @@ export const Services = () => {
   const marqueeServices = [...halfList, ...halfList];
 
   return (
-    <section id="services" className="py-20 bg-[#edf1f5] border-y border-slate-200/80 overflow-hidden">
+    <section id="services" className="py-20 bg-[#f0f4f8] border-y border-slate-200/80 overflow-hidden">
       <div className="clinic-container">
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0145f2]/10 text-[#0145f2] text-xs font-semibold uppercase tracking-wider mb-4 border border-[#0145f2]/20 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#0145f2]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1b2a4a]/10 text-[#1b2a4a] text-xs font-semibold uppercase tracking-wider mb-4 border border-[#1b2a4a]/20 shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#1b2a4a]" />
             <span>Comprehensive Medical Services</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-4">
@@ -78,7 +78,7 @@ export const Services = () => {
               <div className="flex items-center gap-3 shrink-0 self-start sm:self-auto">
                 <a
                   href="#clinical-directory"
-                  className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-[#0145f2] hover:bg-[#0038cb] text-white text-xs font-bold uppercase tracking-wider shadow-xs hover:shadow-md transition-all active:scale-95"
+                  className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-[#1b2a4a] hover:bg-[#121e36] text-white text-xs font-bold uppercase tracking-wider shadow-xs hover:shadow-md transition-all active:scale-95"
                 >
                   <span>VIEW ALL</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -92,7 +92,7 @@ export const Services = () => {
                 type="button"
                 onClick={() => setActiveFilter('all')}
                 className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${activeFilter === 'all'
-                    ? 'bg-[#0145f2] text-white shadow-2xs'
+                    ? 'bg-[#1b2a4a] text-white shadow-2xs'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                   }`}
               >
@@ -113,8 +113,8 @@ export const Services = () => {
                 type="button"
                 onClick={() => setActiveFilter('psychiatry')}
                 className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${activeFilter === 'psychiatry'
-                    ? 'bg-[#0145f2] text-white shadow-2xs'
-                    : 'bg-blue-50 text-[#0145f2] hover:bg-blue-100'
+                    ? 'bg-[#1b2a4a] text-white shadow-2xs'
+                    : 'bg-blue-50 text-[#1b2a4a] hover:bg-blue-100'
                   }`}
               >
                 <Brain className="w-3.5 h-3.5" />
@@ -145,7 +145,7 @@ export const Services = () => {
                     return (
                       <div
                         key={`${service.id}-${index}`}
-                        className="w-[280px] sm:w-[305px] shrink-0 bg-white rounded-xl border border-slate-200/90 shadow-2xs hover:shadow-xl hover:border-[#0145f2]/70 transition-all duration-300 flex flex-col justify-between overflow-hidden group select-none"
+                        className="w-[280px] sm:w-[305px] shrink-0 bg-white rounded-xl border border-slate-200/90 shadow-2xs hover:shadow-xl hover:border-[#1b2a4a]/70 transition-all duration-300 flex flex-col justify-between overflow-hidden group select-none"
                       >
                         {/* Service Card Top Showcase Area (Doctor Pics Removed, Clean Service Icon) */}
                         <div className="h-32 sm:h-34 bg-gradient-to-b from-slate-50/90 via-slate-50/40 to-white p-3.5 relative flex flex-col justify-between items-center border-b border-slate-100">
@@ -153,13 +153,13 @@ export const Services = () => {
                           <div className="w-full flex items-center justify-between z-10">
                             <span className={`inline-block px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wide border ${isGynae
                                 ? 'bg-rose-50 text-rose-700 border-rose-200/80'
-                                : 'bg-blue-50 text-[#0145f2] border-blue-200/80'
+                                : 'bg-blue-50 text-[#1b2a4a] border-blue-200/80'
                               }`}>
                               {categoryTag}
                             </span>
                             <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border ${isGynae
                                 ? 'text-rose-600 bg-rose-50/70 border-rose-100'
-                                : 'text-[#0145f2] bg-blue-50/70 border-blue-100'
+                                : 'text-[#1b2a4a] bg-blue-50/70 border-blue-100'
                               }`}>
                               {isGynae ? 'Gynaecology' : 'Psychiatry'}
                             </span>
@@ -169,7 +169,7 @@ export const Services = () => {
                           <div className="my-auto flex items-center justify-center">
                             <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center shadow-xs transition-all duration-300 group-hover:scale-110 group-hover:shadow-md border ${isGynae
                                 ? 'bg-gradient-to-br from-rose-50 via-white to-rose-100/60 text-rose-600 border-rose-200/80 group-hover:border-rose-300'
-                                : 'bg-gradient-to-br from-blue-50 via-white to-blue-100/60 text-[#0145f2] border-blue-200/80 group-hover:border-blue-300'
+                                : 'bg-gradient-to-br from-blue-50 via-white to-blue-100/60 text-[#1b2a4a] border-blue-200/80 group-hover:border-blue-300'
                               }`}>
                               <DynamicIcon name={service.iconName} className="w-7 h-7 sm:w-8 sm:h-8" />
                             </div>
@@ -180,7 +180,7 @@ export const Services = () => {
                         <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                           <div>
                             {/* Title */}
-                            <h4 className="text-base font-bold text-slate-900 group-hover:text-[#0145f2] transition-colors line-clamp-2 h-[44px] flex items-center mb-1.5">
+                            <h4 className="text-base font-bold text-slate-900 group-hover:text-[#1b2a4a] transition-colors line-clamp-2 h-[44px] flex items-center mb-1.5">
                               {service.name}
                             </h4>
 
@@ -210,7 +210,7 @@ export const Services = () => {
                             </div>
                             <a
                               href="#appointment"
-                              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#0145f2] hover:bg-[#0038cb] text-white text-xs font-bold transition-all active:scale-95 shadow-2xs hover:shadow-xs"
+                              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#1b2a4a] hover:bg-[#121e36] text-white text-xs font-bold transition-all active:scale-95 shadow-2xs hover:shadow-xs"
                             >
                               <span>Book Slot</span>
                               <ArrowRight className="w-3 h-3" />
@@ -280,7 +280,7 @@ export const Services = () => {
                         key={idx}
                         className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:border-slate-300 hover:shadow-xs transition-all text-left"
                       >
-                        <span className="w-2 h-2 rounded-full bg-[#0145f2] shrink-0" />
+                        <span className="w-2 h-2 rounded-full bg-[#1b2a4a] shrink-0" />
                         <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
                           {item}
                         </span>
@@ -321,7 +321,7 @@ export const Services = () => {
                         key={idx}
                         className="flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:border-slate-300 hover:shadow-xs transition-all text-left"
                       >
-                        <span className="w-2 h-2 rounded-full bg-[#0145f2] shrink-0" />
+                        <span className="w-2 h-2 rounded-full bg-[#1b2a4a] shrink-0" />
                         <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
                           {item}
                         </span>
