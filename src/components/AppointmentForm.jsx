@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Calendar, Clock, User, Phone, Mail, FileText, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calendar, Clock, User, Phone, Mail, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 
+const TODAY_STRING = new Date().toISOString().split('T')[0];
+
 export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
-  const { appointment, doctors, services, clinicalDirectory } = clinicData;
+  const { appointment, doctors } = clinicData;
 
   // Form Fields State
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    doctor: '',
-    service: '',
+    doctor: selectedDoctor || '',
+    service: selectedService || '',
     date: '',
     timeSlot: appointment.timeSlots[0] || '',
     reason: '',
@@ -23,21 +25,19 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
   const [requestSubmitted, setRequestSubmitted] = useState(false);
   const [submissionData, setSubmissionData] = useState(null);
 
-  // Sync props when user selects doctor or service from other sections
-  useEffect(() => {
-    if (selectedDoctor) {
-      setFormData((prev) => ({ ...prev, doctor: selectedDoctor }));
-    }
-  }, [selectedDoctor]);
+  // Sync props when user selects doctor or service from other sections (Official React prop-sync pattern)
+  const [prevDoctor, setPrevDoctor] = useState(selectedDoctor);
+  const [prevService, setPrevService] = useState(selectedService);
 
-  useEffect(() => {
-    if (selectedService) {
-      setFormData((prev) => ({ ...prev, service: selectedService }));
-    }
-  }, [selectedService]);
+  if (selectedDoctor !== prevDoctor) {
+    setPrevDoctor(selectedDoctor);
+    setFormData((prev) => ({ ...prev, doctor: selectedDoctor }));
+  }
 
-  // Today's date string for input min attribute (YYYY-MM-DD)
-  const todayString = new Date().toISOString().split('T')[0];
+  if (selectedService !== prevService) {
+    setPrevService(selectedService);
+    setFormData((prev) => ({ ...prev, service: selectedService }));
+  }
 
   // Validate form inputs
   const validateForm = () => {
@@ -63,7 +63,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
 
     if (!formData.date) {
       newErrors.date = 'Please select a preferred appointment date';
-    } else if (formData.date < todayString) {
+    } else if (formData.date < TODAY_STRING) {
       newErrors.date = 'Appointment date cannot be in the past';
     }
 
@@ -199,7 +199,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
         reason: '',
       });
       setErrors({});
-    } catch (err) {
+    } catch {
       setErrors({ form: 'Unable to submit request at this time. Please call our clinic directly.' });
     } finally {
       setIsSubmitting(false);
@@ -413,7 +413,7 @@ export const AppointmentForm = ({ selectedDoctor, selectedService }) => {
                       type="date"
                       id="date"
                       name="date"
-                      min={todayString}
+                      min={TODAY_STRING}
                       value={formData.date}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 rounded-xl border text-sm text-slate-800 bg-slate-50/70 focus:bg-white focus:outline-hidden transition-colors ${errors.date

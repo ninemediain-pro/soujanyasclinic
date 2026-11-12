@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Calendar, Clock, User, Phone, Mail, FileText, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { X, Calendar, Clock, User, Phone, Mail, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 
+const TODAY_STRING = new Date().toISOString().split('T')[0];
+
 export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialService = '' }) => {
-  const { appointment, doctors, services } = clinicData;
+  const { appointment, doctors } = clinicData;
 
   const [formData, setFormData] = useState({
     name: '',
@@ -24,13 +26,13 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
   const [isClosing, setIsClosing] = useState(false);
 
   // Close smoothly with animation
-  const handleSmoothClose = () => {
+  const handleSmoothClose = useCallback(() => {
     setIsClosing(true);
     setTimeout(() => {
       setIsClosing(false);
       onClose();
     }, 280);
-  };
+  }, [onClose]);
 
   // Close on Escape key and lock body scroll
   useEffect(() => {
@@ -50,11 +52,9 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = originalOverflow;
     };
-  }, [isOpen]);
+  }, [isOpen, handleSmoothClose]);
 
   if (!isOpen) return null;
-
-  const todayString = new Date().toISOString().split('T')[0];
 
   const validateForm = () => {
     const newErrors = {};
@@ -79,7 +79,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
 
     if (!formData.date) {
       newErrors.date = 'Please select a preferred date';
-    } else if (formData.date < todayString) {
+    } else if (formData.date < TODAY_STRING) {
       newErrors.date = 'Date cannot be in the past';
     }
 
@@ -205,7 +205,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
         reason: '',
       });
       setErrors({});
-    } catch (err) {
+    } catch {
       setErrors({ form: 'Unable to submit request. Please call our clinic directly.' });
     } finally {
       setIsSubmitting(false);
@@ -410,7 +410,7 @@ export const AppointmentModal = ({ isOpen, onClose, initialDoctor = '', initialS
                   <input
                     type="date"
                     name="date"
-                    min={todayString}
+                    min={TODAY_STRING}
                     value={formData.date}
                     onChange={handleChange}
                     className="w-full px-2.5 py-2 rounded-lg border border-slate-200 text-xs focus:border-slate-900 focus:outline-hidden"

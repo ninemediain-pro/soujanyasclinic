@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, ExternalLink, MessageCircle, AlertTriangle, Building } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ExternalLink, MessageCircle, AlertTriangle } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 import { handleEmailClick, getEmailUrl } from '../utils/mailHelper';
 

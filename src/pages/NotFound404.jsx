@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Phone, ArrowLeft, Search, Calendar, Stethoscope } from 'lucide-react';
+import { Home, Phone, Search, Calendar, Stethoscope } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 
 export const NotFound404 = ({ onNavigateHome }) => {

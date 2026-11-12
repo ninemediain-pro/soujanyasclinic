@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Settings, X, CheckSquare, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { Settings, X, CheckSquare, ChevronDown, ChevronUp } from 'lucide-react';
 
 export const PlaceholderBanner = () => {
   const [isOpen, setIsOpen] = useState(false);

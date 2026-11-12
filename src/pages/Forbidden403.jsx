@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldAlert, Home, Phone, ArrowLeft, Lock } from 'lucide-react';
+import { ShieldAlert, Home, Phone, Lock } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 
 export const Forbidden403 = ({ onNavigateHome }) => {

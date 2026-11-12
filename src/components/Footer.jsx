@@ -1,12 +1,13 @@
 import React from 'react';
-import { Activity, ArrowUp, Phone, Mail, MapPin } from 'lucide-react';
+import { ArrowUp, Phone, Mail, MapPin } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 import DynamicIcon from './DynamicIcon';
 import { handleEmailClick, getEmailUrl } from '../utils/mailHelper';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export const Footer = ({ onNavigate }) => {
   const { clinicName, logoUrl, footer, navLinks, services, contact } = clinicData;
-  const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -149,7 +150,7 @@ export const Footer = ({ onNavigate }) => {
         {/* Bottom Bar: Copyright & Navigation */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>
-            {footer.copyright.replace('{year}', currentYear)}
+            {footer.copyright.replace('{year}', CURRENT_YEAR)}
           </p>
 
           <div className="flex items-center gap-6">

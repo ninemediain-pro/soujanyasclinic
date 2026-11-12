@@ -3,22 +3,13 @@ import {
   Calendar, 
   ArrowRight, 
   ShieldCheck, 
-  Heart, 
   Clock, 
   UserCheck, 
   Sparkles, 
   ChevronLeft, 
   ChevronRight,
   Phone,
-  CheckCircle2,
-  Stethoscope,
-  Star,
-  Play,
-  Pause,
-  Award,
-  BadgeCheck,
-  Activity,
-  MapPin
+  BadgeCheck
 } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 

@@ -67,7 +67,7 @@ export const Testimonials = () => {
             <div className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-slate-200/80">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-full bg-[#0145f2] text-white flex items-center justify-center font-bold text-sm shadow-xs">
-                  {items[currentIndex].author.replace(/[\[\]]/g, '').slice(0, 2) || 'PT'}
+                  {items[currentIndex].author.replace(/[[\]]/g, '').slice(0, 2) || 'PT'}
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-slate-900">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Stethoscope, ShieldCheck, Clock, Users } from 'lucide-react';
+import { CheckCircle2, Stethoscope, Users } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 import ImagePlaceholder from './ImagePlaceholder';
 

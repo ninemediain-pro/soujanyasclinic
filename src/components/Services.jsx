@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Check, Sparkles, Stethoscope, Brain, HeartPulse, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Check, Sparkles, Stethoscope, Brain, HeartPulse, CheckCircle2 } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 import DynamicIcon from './DynamicIcon';
 
@@ -21,7 +21,7 @@ const categoryMap = {
 export const Services = () => {
   const { services, clinicalDirectory } = clinicData;
   const [isPaused, setIsPaused] = useState(false);
-  const [direction, setDirection] = useState('normal'); // 'normal' (right-to-left) | 'reverse' (left-to-right)
+  const [direction] = useState('normal'); // 'normal' (right-to-left) | 'reverse' (left-to-right)
   const [activeFilter, setActiveFilter] = useState('all'); // 'all' | 'gynaecology' | 'psychiatry'
 
   // Filtered services based on user tab selection

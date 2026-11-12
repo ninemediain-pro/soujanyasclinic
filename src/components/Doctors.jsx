@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Award, Clock, BookOpen, X, ArrowRight, CheckCircle2, User, Share2 } from 'lucide-react';
+import { Calendar, Award, Clock, BookOpen, X, ArrowRight, CheckCircle2, User } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 import ImagePlaceholder from './ImagePlaceholder';
 

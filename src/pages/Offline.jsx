@@ -4,7 +4,7 @@ import { clinicData } from '../data/clinic';
 
 export const Offline = ({ onNavigateHome }) => {
   const [isChecking, setIsChecking] = useState(false);
-  const [onlineStatus, setOnlineStatus] = useState(typeof navigator !== 'undefined' ? navigator.onLine : true);
+  const [_onlineStatus, setOnlineStatus] = useState(typeof navigator !== 'undefined' ? navigator.onLine : true);
 
   useEffect(() => {
     const handleOnline = () => setOnlineStatus(true);

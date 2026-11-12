@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Shield, Lock, FileText, CheckCircle2, Phone, Mail, MapPin, Printer } from 'lucide-react';
+import { ArrowLeft, Shield, Lock, Phone, Mail, MapPin, Printer } from 'lucide-react';
 import { clinicData } from '../data/clinic';
 import { handleEmailClick, getEmailUrl } from '../utils/mailHelper';
 
