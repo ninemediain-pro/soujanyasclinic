@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Google Sitelinks and Search Indexing
+Sitemap: https://motherandmindcare.com/sitemap.xml
+

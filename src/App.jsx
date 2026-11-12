@@ -52,6 +52,12 @@ const getRouteFromUrl = () => {
     return 'offline';
   }
 
+  // Sitelinks & Section deep links (resolve to home)
+  const sectionPaths = ['/about', '/services', '/doctors', '/why-us', '/appointment', '/contact'];
+  if (sectionPaths.includes(path)) {
+    return 'home';
+  }
+
   // Root or section anchors
   if (path === '/' || path === '' || path === '/index.html') {
     return 'home';
@@ -79,6 +85,24 @@ export function App() {
       window.removeEventListener('popstate', handlePopState);
       window.removeEventListener('hashchange', handlePopState);
     };
+  }, []);
+
+  // Handle direct sitelink navigation or section hash on initial load
+  useEffect(() => {
+    const rawPath = window.location.pathname.replace(/^\//, '').toLowerCase();
+    const rawHash = window.location.hash.replace(/^#/, '').toLowerCase();
+    const targetSection = rawHash || rawPath;
+    const validSections = ['about', 'services', 'doctors', 'why-us', 'appointment', 'contact'];
+
+    if (validSections.includes(targetSection)) {
+      const timer = setTimeout(() => {
+        const el = document.getElementById(targetSection);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const navigateTo = (page) => {

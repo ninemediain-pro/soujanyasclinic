@@ -23,10 +23,13 @@ export const Footer = ({ onNavigate }) => {
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <img 
-                src="/clinic-logo-white.png" 
+                src={logoUrl || "/clinic-logo.png"} 
                 alt={clinicName} 
-                className="h-10 sm:h-12 w-auto object-contain" 
+                className="h-10 sm:h-12 w-10 sm:w-12 object-contain rounded-full shadow-sm" 
               />
+              <span className="font-bold text-base sm:text-lg text-white tracking-tight">
+                {clinicName}
+              </span>
             </div>
 
             <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-sm">

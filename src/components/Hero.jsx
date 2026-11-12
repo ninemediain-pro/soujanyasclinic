@@ -246,7 +246,7 @@ export const Hero = () => {
                 alt="Dr. Soujanya's Mother & Mind Care" 
                 className="w-full max-w-[340px] sm:max-w-[460px] md:max-w-[540px] lg:max-w-[580px] h-auto object-contain object-left drop-shadow-xs"
               />
-              <h1 className="sr-only">Dr. Soujanya's Mother & Mind Care</h1>
+              <h1 className="sr-only">Dr. Soujanya's Mother & Mind Care - Dr Soujanya's Clinic, Pragati Nagar, Hyderabad</h1>
             </div>
 
             {/* Subheadline Slogan */}

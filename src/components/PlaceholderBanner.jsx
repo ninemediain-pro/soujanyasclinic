@@ -85,13 +85,6 @@ export const PlaceholderBanner = () => {
             </div>
           </div>
         )}
-                <li>• <code>testimonials.items</code> or toggle <code>showSection</code></li>
-                <li>• <code>appointment.endpointUrl</code> (for live API)</li>
-                <li>• <code>services[]</code> list of treatments</li>
-              </ul>
-            </div>
-          </div>
-        )}
       </div>
     </aside>
   );
