@@ -53,8 +53,8 @@ const getRouteFromUrl = () => {
   }
 
   // Sitelinks & Section deep links (resolve to home)
-  const sectionPaths = ['/about', '/services', '/doctors', '/why-us', '/appointment', '/contact'];
-  if (sectionPaths.includes(path)) {
+  const sectionPaths = ['/home', '/about', '/services', '/doctors', '/why-us', '/appointment', '/contact'];
+  if (sectionPaths.includes(path) || hash === '#home') {
     return 'home';
   }
 
@@ -104,13 +104,17 @@ export function App() {
     const rawPath = window.location.pathname.replace(/^\//, '').toLowerCase();
     const rawHash = window.location.hash.replace(/^#/, '').toLowerCase();
     const targetSection = rawHash || rawPath;
-    const validSections = ['about', 'services', 'doctors', 'why-us', 'appointment', 'contact'];
+    const validSections = ['home', 'about', 'services', 'doctors', 'why-us', 'appointment', 'contact'];
 
     if (validSections.includes(targetSection)) {
       const timer = setTimeout(() => {
-        const el = document.getElementById(targetSection);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
+        if (targetSection === 'home') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const el = document.getElementById(targetSection);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       }, 150);
       return () => clearTimeout(timer);
