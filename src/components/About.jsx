@@ -94,7 +94,12 @@ export const About = () => {
 
             {/* Action Anchor */}
             <a
-              href="#doctors"
+              href="/doctors"
+              onClick={(e) => {
+                e.preventDefault();
+                window.history.pushState(null, '', '/doctors');
+                document.getElementById('doctors')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-[#0145f2] hover:bg-[#0038cb] shadow-md shadow-[#0145f2]/25 hover:shadow-lg hover:shadow-[#0145f2]/35 transition-all duration-200 active:scale-95 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#0145f2] border border-[#0145f2]"
             >
               <Users className="w-4 h-4 text-blue-100" />

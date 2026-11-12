@@ -3,3 +3,4 @@ import ThemeContext from './ThemeContext';
 
 export const useTheme = () => useContext(ThemeContext);
 export default useTheme;
+

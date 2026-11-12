@@ -75,7 +75,19 @@ export function App() {
   // Synchronize browser history and back/forward navigation
   useEffect(() => {
     const handlePopState = () => {
-      setCurrentPage(getRouteFromUrl());
+      const page = getRouteFromUrl();
+      setCurrentPage(page);
+      if (page === 'home') {
+        const rawPath = window.location.pathname.replace(/^\//, '').toLowerCase();
+        const rawHash = window.location.hash.replace(/^#/, '').toLowerCase();
+        const targetSection = rawHash || rawPath;
+        if (targetSection) {
+          const el = document.getElementById(targetSection);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
     };
 
     window.addEventListener('popstate', handlePopState);

@@ -72,6 +72,17 @@ export const Footer = ({ onNavigate }) => {
                 <li key={link.href}>
                   <a
                     href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const targetId = link.href.replace(/^\//, '');
+                      if (!targetId || targetId === 'home') {
+                        window.history.pushState(null, '', '/');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      } else {
+                        window.history.pushState(null, '', link.href);
+                        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
                     className="text-slate-400 hover:text-white transition-colors"
                   >
                     {link.label}
@@ -90,7 +101,12 @@ export const Footer = ({ onNavigate }) => {
               {services.slice(0, 5).map((srv) => (
                 <li key={srv.id}>
                   <a
-                    href="#services"
+                    href="/services"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.history.pushState(null, '', '/services');
+                      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                     className="text-slate-400 hover:text-white transition-colors line-clamp-1"
                   >
                     {srv.name}

@@ -249,7 +249,12 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto mb-6 sm:mb-9">
               <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-2.5 sm:gap-3.5 w-full sm:w-auto">
                 <a
-                  href="#appointment"
+                  href="/appointment"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.history.pushState(null, '', '/appointment');
+                    document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="inline-flex items-center justify-center gap-2 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-[#1b2a4a] hover:bg-[#121e36] shadow-md sm:shadow-lg shadow-[#1b2a4a]/25 hover:shadow-xl hover:shadow-[#1b2a4a]/35 transition-all duration-200 active:scale-95 group border border-[#1b2a4a] text-center"
                 >
                   <Calendar className="w-4 h-4 text-amber-200 group-hover:scale-110 transition-transform shrink-0" />
@@ -257,7 +262,12 @@ export const Hero = () => {
                 </a>
 
                 <a
-                  href="#services"
+                  href="/services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.history.pushState(null, '', '/services');
+                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="inline-flex items-center justify-center gap-1.5 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-semibold text-slate-800 bg-white hover:bg-blue-50/60 hover:text-[#1b2a4a] border border-slate-200 hover:border-[#1b2a4a]/40 shadow-2xs hover:shadow-md transition-all duration-200 active:scale-95 text-center truncate"
                 >
                   <span className="truncate">{hero.secondaryCtaText}</span>
@@ -428,7 +438,12 @@ export const Hero = () => {
                     </div>
 
                     <a
-                      href="#appointment"
+                      href="/appointment"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.history.pushState(null, '', '/appointment');
+                        document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
                       className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold shadow-md shrink-0 transition-transform active:scale-95 group/btn"
                     >
                       <span>Book Slot</span>

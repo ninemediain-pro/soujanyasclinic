@@ -24,12 +24,12 @@ export const clinicData = {
   // 1. Navigation Links
   // --------------------------------------------------------------------------
   navLinks: [
-    { label: "Home", href: "#home" },
-    { label: "About Us", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Our Doctors", href: "#doctors" },
-    { label: "Why Choose Us", href: "#why-us" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Our Doctors", href: "/doctors" },
+    { label: "Why Choose Us", href: "/why-us" },
+    { label: "Contact", href: "/contact" },
   ],
 
   // --------------------------------------------------------------------------

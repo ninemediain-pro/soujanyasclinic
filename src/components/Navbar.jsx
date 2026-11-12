@@ -44,8 +44,28 @@ export const Navbar = () => {
 
   // Filter links (hide testimonials if disabled)
   const navLinks = clinicData.navLinks.filter(
-    (link) => link.href !== '#testimonials' || clinicData.testimonials?.showSection
+    (link) => link.href !== '#testimonials' && link.href !== '/testimonials' || clinicData.testimonials?.showSection
   );
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const targetId = href.replace(/^\//, '').replace(/^#/, '');
+    if (!targetId || targetId === 'home') {
+      if (window.location.pathname !== '/') {
+        window.history.pushState(null, '', '/');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const targetPath = `/${targetId}`;
+      if (window.location.pathname !== targetPath) {
+        window.history.pushState(null, '', targetPath);
+      }
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <>
@@ -96,7 +116,8 @@ export const Navbar = () => {
 
               {/* Brand Logo & Clinic Info (Clinic Name kept beside logo in Navbar only) */}
               <a
-                href="#home"
+                href="/"
+                onClick={(e) => handleNavClick(e, '/')}
                 className="flex items-center gap-2 sm:gap-3 group focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#1b2a4a] rounded-full p-0.5 min-w-0 flex-1 sm:flex-initial"
                 aria-label={clinicData.clinicName}
                 title={clinicData.clinicName}
@@ -139,13 +160,14 @@ export const Navbar = () => {
                   : 'bg-white/30 backdrop-blur-md border-white/40'
               }`} aria-label="Main navigation">
                 {navLinks.map((link) => {
-                  const linkId = link.href.replace('#', '');
+                  const linkId = link.href.replace(/^\//, '').replace(/^#/, '') || 'home';
                   const isActive = activeSection === linkId;
 
                   return (
                     <a
                       key={link.href}
                       href={link.href}
+                      onClick={(e) => handleNavClick(e, link.href)}
                       className={`relative whitespace-nowrap px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${isActive
                           ? 'bg-[#1b2a4a] text-white shadow-xs font-bold border border-[#1b2a4a]'
                           : scrolled
@@ -176,7 +198,8 @@ export const Navbar = () => {
                   </a>
                 )}
                 <a
-                  href="#appointment"
+                  href="/appointment"
+                  onClick={(e) => handleNavClick(e, '/appointment')}
                   className="whitespace-nowrap inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-[#1b2a4a] hover:bg-[#121e36] shadow-md shadow-[#1b2a4a]/25 hover:shadow-lg hover:shadow-[#1b2a4a]/35 transition-all duration-200 active:scale-95 group focus:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#1b2a4a] border border-[#1b2a4a]"
                 >
                   <Calendar className="w-3.5 h-3.5 text-amber-200 group-hover:scale-110 transition-transform" />
@@ -232,16 +255,21 @@ export const Navbar = () => {
               {/* Navigation Links with Rounded Pills */}
               <nav className="flex flex-col space-y-1">
                 {navLinks.map((link) => {
-                  const linkId = link.href.replace('#', '');
+                  const linkId = link.href.replace(/^\//, '').replace(/^#/, '') || 'home';
                   const isActive = activeSection === linkId;
-                  const isContact = link.href === '#contact';
+                  const isContact = link.href === '/contact' || link.href === '#contact';
                   const targetHref = isContact ? `tel:${clinicData.contact?.phoneTel || clinicData.contact?.phone || '+916303818118'}` : link.href;
 
                   return (
                     <a
                       key={link.href}
                       href={targetHref}
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={(e) => {
+                        setMobileMenuOpen(false);
+                        if (!isContact) {
+                          handleNavClick(e, link.href);
+                        }
+                      }}
                       className={`flex items-center justify-between px-4 py-2.5 rounded-2xl text-sm font-semibold transition-all ${isActive
                           ? 'bg-[#1b2a4a] text-white font-bold shadow-xs'
                           : 'text-slate-700 hover:bg-blue-50 hover:text-[#1b2a4a]'

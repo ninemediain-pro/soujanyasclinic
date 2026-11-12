@@ -209,7 +209,12 @@ export const Services = () => {
                               <span className="text-[11px] font-semibold text-slate-600">In-Clinic & Online</span>
                             </div>
                             <a
-                              href="#appointment"
+                              href="/appointment"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                window.history.pushState(null, '', '/appointment');
+                                document.getElementById('appointment')?.scrollIntoView({ behavior: 'smooth' });
+                              }}
                               className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#1b2a4a] hover:bg-[#121e36] text-white text-xs font-bold transition-all active:scale-95 shadow-2xs hover:shadow-xs"
                             >
                               <span>Book Slot</span>
@@ -339,7 +344,15 @@ export const Services = () => {
         <div className="mt-14 text-center">
           <p className="text-xs sm:text-sm text-slate-500">
             Need a clinical consultation or second opinion not listed above?{' '}
-            <a href="#contact" className="text-slate-900 font-semibold underline underline-offset-4 hover:text-slate-700">
+            <a
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                window.history.pushState(null, '', '/contact');
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="text-slate-900 font-semibold underline underline-offset-4 hover:text-slate-700"
+            >
               Inquire with our clinic reception
             </a>{' '}
             or call our direct office line.
